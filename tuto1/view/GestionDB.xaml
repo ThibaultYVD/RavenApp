@@ -1,0 +1,61 @@
+﻿<Window x:Class="tuto1.view.GestionDB"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tuto1.view"
+        mc:Ignorable="d"
+        Title="GestionDB" Height="605" Width="819.805">
+    <Grid Margin="0,0,2,0">
+        <Grid Background="#FF6A6A6A" Margin="0,0,-2,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ListBox x:Name="listBox" Margin="10,10,10,10" SelectionChanged="listBox_SelectionChanged" Background="#FF403636" Foreground="#FFCBC9C9" FontFamily="Arial" FontSize="18">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <!-- contexte de chaque ligne = données de chaque ligne -->
+                        <TextBlock >
+                        <Run Text="{Binding id}" FontWeight="SemiBold" />
+                        <Run Text=" - " />
+                        <Run Text="{Binding nom}" />
+                        </TextBlock>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Grid x:Name="detail" Margin="10,10,10,10" Grid.Column="1" DataContext="{Binding ElementName=listBox, Path=SelectedItem}" Background="#FFC53333">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <Label x:Name="label1" Content="Id" Margin="28,23,54,26" VerticalAlignment="Center" FontSize="20" FontFamily="Arial"/>
+                <TextBox x:Name="tb_id" Margin="131,5,23,5" Text="{Binding id}" FontSize="18" FontFamily="Arial" Grid.ColumnSpan="2" Background="#FFF1EAEA"/>
+                <Label x:Name="label2" Grid.Row="1" Content="Nom" Margin="28,30,0,20" VerticalAlignment="Center" FontSize="20" FontFamily="Arial"/>
+                <TextBox x:Name="tb_nom" Grid.Row="1" Margin="131,5,23,5" Text="{Binding nom}" FontSize="18" FontFamily="Arial" Grid.ColumnSpan="2" TextChanged="tb_nom_TextChanged" Background="#FFF1EAEA"/>
+                <Label x:Name="label3" Grid.Row="2" Content="Prix" Margin="28,25,0,23" VerticalAlignment="Center" FontFamily="Arial" FontSize="20"/>
+                <TextBox x:Name="tb_prix" Grid.Row="2" Margin="131,5,23,5" Text="{Binding prix}" FontFamily="Arial" FontSize="20" Grid.ColumnSpan="2" Background="#FFF1EAEA"/>
+                <Label x:Name="label4" Grid.Row="3" Content="Image" Margin="28,26,0,10" VerticalAlignment="Center" FontFamily="Arial" FontSize="20" Height="42"/>
+                <TextBox x:Name="tb_image" Grid.Row="3" Margin="131,5,23,5" Text="{Binding image}" FontFamily="Arial" FontSize="20" Grid.ColumnSpan="2" Background="#FFF1EAEA"/>
+                <StackPanel Grid.Row="4" Margin="131,0,23,0" Grid.ColumnSpan="2">
+                    <Button x:Name="btn_supprimer" Content="SUPPRIMER" Margin="5,5,5,5" Click="btn_supprimer_Click" FontSize="20" FontFamily="Arial" Height="24"/>
+                    <Button x:Name="btn_modifier" Content="MODIFIER" Margin="5,5,5,5" Click="btn_modifier_Click" FontFamily="Arial" FontSize="20"/>
+                    <Button x:Name="btn_ajouter" Content="AJOUTER" Margin="5,5,5,5" Click="btn_ajouter_Click" FontFamily="Arial" FontSize="20"/>
+                    <Button x:Name="btn_rafraichir" Content="RAFRAICHIR" Margin="5,5,5,5" Click="btn_rafraichir_Click" FontFamily="Arial" FontSize="20"/>
+                    <Button x:Name="btn_deconnecter" Content="SE DECONNECTER" Click="btn_deconnecter_Click" FontFamily="Arial" FontSize="20" Width="363" Height="26" Margin="5,5,5,5"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="tuto1.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tuto1.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="618" Width="580">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="691*"/>
+            <ColumnDefinition Width="101*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2" Background="#FFC53333">
+            <Button x:Name="btn_login" Content="Se connecter" Margin="131,395,132,0" VerticalAlignment="Top" Height="70" Click="btn_login_Click" FontFamily="Arial" FontSize="20" Background="#FF171010" FontStretch="Expanded" BorderBrush="Black" Foreground="#FFE4E4E4"/>
+            <TextBox x:Name="tb_login" Height="70" Margin="131,98,132,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FFF1EAEA" FontFamily="Arial" FontSize="20"/>
+            <Label Content="Login" HorizontalAlignment="Left" Margin="131,60,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" BorderThickness="0" SnapsToDevicePixels="True"/>
+            <Label Content="Mot de passe" HorizontalAlignment="Left" Margin="131,229,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" Cursor=""/>
+            <PasswordBox x:Name="PswdBox_mdp" HorizontalAlignment="Left" Margin="131,267,0,0" VerticalAlignment="Top" Width="309" Height="70" Background="#FFF1EAEA" FontFamily="Arial" FontSize="20"/>
+            <Button x:Name="btn_quitter_Copy" Content="Fermer l'application" Margin="132,485,132,0" VerticalAlignment="Top" Height="70" Click="btn_quitter_Click" FontFamily="Arial" FontSize="20" Background="#FF171010" FontStretch="Expanded" BorderBrush="Black" Foreground="#FFE4E4E4"/>
+
+        </Grid>
+
+    </Grid>
+</Window>
